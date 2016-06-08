@@ -1,6 +1,6 @@
 # KLTextView
 支持 placeholder占位文字和字数限制的 TextView
-
+## 完美封装，无缝对接UITextView
 ***
 ## 常规功能
 设置占位符与输入字数限制
