@@ -22,17 +22,19 @@
 - (void)textViewDidChangeSelection:(KLTextView *)textView;
 @end
 
+IB_DESIGNABLE
 @interface KLTextView : UIView
-@property(nonatomic,weak)    NSString        *text;
+@property(nonatomic,copy)  IBInspectable  NSString   *placeholder;
+/** 限制的数量，默认为LONG_MAX不显示 */
+@property(nonatomic,assign)IBInspectable  NSInteger  limitNum;
+@property(nonatomic,weak)  IBInspectable  NSString   *text;
+@property(nonatomic,weak)  IBInspectable  UIColor    *textColor;
+
 @property(nonatomic,weak)    UIFont          *font;
-@property(nonatomic,weak)    UIColor         *textColor;
 @property(nonatomic,assign)  NSTextAlignment textAlignment;
 @property(nonatomic,assign)  UIEdgeInsets    textContainerInset;
 @property(nonatomic,weak)    id<KLTextViewDelegate> delegate;
 
-/** 限制的数量，默认为LONG_MAX不显示 */
-@property(nonatomic,assign)  NSInteger       limitNum;
-@property(nonatomic,copy)    NSString        *placeholder;
 @end
 
 
