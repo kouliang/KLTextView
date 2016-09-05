@@ -117,6 +117,13 @@
     }else {
         _placeholderLabel.hidden = NO;
     }
+    
+    
+    NSString *str = textView.text;
+    NSInteger number = [str length];
+    if ((number > _limitNum)&&(textView.markedTextRange == nil)) { //兼容iOS7
+        textView.text = [str substringToIndex:NSMaxRange([str rangeOfComposedCharacterSequenceAtIndex:_limitNum-1])];
+    }
     _limitNumLabel.text = [NSString stringWithFormat:@"%zd", _limitNum - _textView.text.length];
     
     if ([_delegate respondsToSelector:@selector(textViewDidChange:)]) {
